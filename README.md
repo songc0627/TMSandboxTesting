@@ -1,6 +1,6 @@
 # TMSandboxTesting
 
-
+Notes Aug 8
 
 1. I’m using Java (with junit) here although I may also rewrite in .net, but i think Java is more common and easy to setup dev environment. (I’m using Eclipse).
 2. Although the sample API call is using fixed CategoryId, I’m making it as variable so we can add more test data later. We can add parameter to test method, or make different IDs as a test CSV file, and run the test repeatedly.

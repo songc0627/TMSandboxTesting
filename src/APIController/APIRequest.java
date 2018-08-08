@@ -2,24 +2,13 @@ package APIController;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Set;
 
 import org.apache.http.Header;
-import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpDelete;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPatch;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpPut;
-import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.message.BasicNameValuePair;
 
 
 public class APIRequest {
@@ -28,7 +17,7 @@ public class APIRequest {
 	private String url;
 
 	/**
-	 * Constructor for RestExecutor
+	 * Constructor for APIController
 	 * 
 	 * @param url
 	 */
@@ -79,6 +68,7 @@ public class APIRequest {
 			while ((line = rd.readLine()) != null) {
 				responseString.append(line);
 			}
+			
 			/*
 			 * Setting values for the response object
 			 */
@@ -93,7 +83,7 @@ public class APIRequest {
 			e.printStackTrace();
 		}
 		/*
-		 * Returns the RestValidator object providing the response object
+		 * Returns the response object
 		 */
 		return resResponse;
 	}

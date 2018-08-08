@@ -9,6 +9,9 @@ public class APIResponse {
 	private HashMap<String, String> headers;
 	private String responseMessage;
 
+	/**
+	 * Constructor for APIResponse
+	 */
 	public APIResponse() {
 		headers = new HashMap<String, String>();
 	}

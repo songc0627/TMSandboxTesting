@@ -6,12 +6,18 @@ import org.json.simple.parser.*;
 public class CategoryReader {
 	JSONObject jo;
 	
+	/**
+	 * read in Category JSON object
+	 */
 	public CategoryReader(String s) throws Exception {
 		Object obj = new JSONParser().parse(s);
 		
 		jo = (JSONObject) obj;
 	}
 	
+	/*
+	 * get value for Name field in Category JSON
+	 */
 	public String getName() throws Exception{
 		String name = null;
 		
@@ -20,6 +26,9 @@ public class CategoryReader {
 		return name;
 	}
 	
+	/*
+	 * get value for CanRelist field in Category JSON
+	 */
 	public Boolean getCanRelist() throws Exception {
 		Boolean canRelist = null;
 		
@@ -28,6 +37,9 @@ public class CategoryReader {
 		return canRelist;
 	}
 	
+	/*
+	 * get value for Desc field for promotion 'Gallery' in Category JSON
+	 */
 	public String getPromoGalleryDesc() throws Exception {
 		String promoGalleryDesc = null;
 		

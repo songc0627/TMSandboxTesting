@@ -2,14 +2,12 @@ package test;
 
 import static org.junit.Assert.*;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import APIController.APIRequest;
 import APIController.APIResponse;
 import JsonParser.CategoryReader;
-
 
 public class CategoryTest {
 	
@@ -20,20 +18,25 @@ public class CategoryTest {
 	@Before
 	public void setUp() {
 		/*
-		 * Initialize RestExecutor object using the end point URL
+		 * Initialize APIRequest object using the end point URL
 		 */
 		request = new APIRequest(URL);
 	}
 	
     @Test
     public void testSample() throws Exception {
+    	// set path for the API call
     	String path = String.format("/v1/Categories/%s/Details.json?catalogue=false", 6327);
 
+    	// get response for service call
     	APIResponse response = request.get(path);
     	
+    	// parse Category content into CategoryReader
     	CategoryReader cr = new CategoryReader(response.getResponseBody());
     	
+    	// assert values
     	assertEquals(cr.getName(), "Carbon credits");
+    	
     	assertEquals(cr.getCanRelist(), Boolean.TRUE);
     	
     	assertTrue(cr.getPromoGalleryDesc().contains("2x larger image"));
